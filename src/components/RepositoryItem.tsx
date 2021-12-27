@@ -1,4 +1,12 @@
-export function RepositoryItem(props) {
+interface RepositoryITemProps {
+    repository: {
+        name: string;
+        description: string;
+        html_url: string;
+    }
+}
+
+export function RepositoryItem(props: RepositoryITemProps) {
     return (
         //Recebendo dados do componente Pai e definindo nome padrão
         <li>

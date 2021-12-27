@@ -2,10 +2,17 @@ import { RepositoryItem } from "./RepositoryItem";
 import '../styles/repositories.scss';
 import { useEffect, useState } from "react";
 
+interface Repository {
+    name: string;
+    description: string;
+    html_url: string;
+}
+
 //Quando se trata de lista, iniciamos o estado como Array vazio
 //Sempre inicar o estado com o tipo de variavel qe vai ser armanzeda
 export function Repository_list() {
-    const [repositories, setrepositories] = useState([]);
+    //Tipar um estado que é um array : Usar <Tipo[]>([])
+    const [repositories, setrepositories] = useState<Repository[]>([]);
     //Exemplo de como disparar uma função quando alterar 
     //o estado com useEfect
     useEffect(() => {
